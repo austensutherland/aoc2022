@@ -1,7 +1,8 @@
 import pathlib
 import string
 
-path =  pathlib.Path(__file__).resolve().parent
+path = pathlib.Path(__file__).resolve().parent
+
 
 def part_one():
     ruckked = 0
@@ -10,20 +11,22 @@ def part_one():
 
     overlapping_items = []
     for pack in packs:
-        one, two = pack[int(len(pack)/2):], pack[:int(len(pack)/2)]
+        one, two = pack[int(len(pack) / 2) :], pack[: int(len(pack) / 2)]
         overlapping_items += list(set([i for i in one if i in two]))
 
     for overlap in overlapping_items:
         if overlap.isupper():
             result = (string.ascii_uppercase.index(overlap) + 1) + 26
         else:
-            result = (string.ascii_lowercase.index(overlap) + 1)
+            result = string.ascii_lowercase.index(overlap) + 1
 
         ruckked += result
 
     return ruckked
 
+
 print(part_one())
+
 
 def part_two():
     ruckked = 0
@@ -42,10 +45,11 @@ def part_two():
         if overlap.isupper():
             result = (string.ascii_uppercase.index(overlap) + 1) + 26
         else:
-            result = (string.ascii_lowercase.index(overlap) + 1)
+            result = string.ascii_lowercase.index(overlap) + 1
 
         ruckked += result
 
     return ruckked
+
 
 print(part_two())

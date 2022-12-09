@@ -1,6 +1,7 @@
 import pathlib
 
-path =  pathlib.Path(__file__).resolve().parent
+path = pathlib.Path(__file__).resolve().parent
+
 
 def part_one():
     with open(f"{path}/input.txt", "r") as infile:
@@ -8,6 +9,7 @@ def part_one():
         elf_total_cals = [sum([int(i) for i in item.split(",")]) for item in content]
 
     return max(elf_total_cals)
+
 
 def part_two():
     elf_total_cals = []
